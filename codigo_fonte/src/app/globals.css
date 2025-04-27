@@ -1,0 +1,73 @@
+/* src/app/globals.css - Adicionar estilos para melhorar responsividade */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Estilos para melhorar a responsividade das tabelas */
+@media (max-width: 768px) {
+  .responsive-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+  }
+  
+  .responsive-table-container::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .responsive-table-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+  
+  .responsive-table-container::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Estilos para melhorar a visualização em dispositivos móveis */
+@media (max-width: 640px) {
+  .mobile-card {
+    @apply bg-gray-800 p-4 rounded-lg mb-4 shadow-md;
+  }
+  
+  .mobile-card-header {
+    @apply flex justify-between items-center mb-2;
+  }
+  
+  .mobile-card-title {
+    @apply font-semibold text-lg;
+  }
+  
+  .mobile-card-content {
+    @apply space-y-2;
+  }
+  
+  .mobile-card-row {
+    @apply flex justify-between;
+  }
+  
+  .mobile-card-label {
+    @apply text-gray-400 text-sm;
+  }
+  
+  .mobile-card-value {
+    @apply text-right;
+  }
+}
